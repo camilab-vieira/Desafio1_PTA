@@ -5,16 +5,16 @@ body{
 
 header{
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 0px 150px 0px 150px;
     position: fixed;
     width: 100%;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .navbar{
-    width: 85vw;
+    width: 85%;
     height: 200px;
     display: flex;
+    margin-left: 10%;
     justify-content: space-between;
     align-items: center;
 }
@@ -49,19 +49,38 @@ header{
     border-radius: 8px;
 }
 
-section{
-    padding: 280px 50px 80px 50px;
+@media screen and (max-width: 720px) {
+	.search{
+        width: 40px;
+        height: 40px;
+        padding: 10px 0px 10px 20px;
+        gap: 0;
+    }
+
+    .search input[type="text"]{
+        font-family: 'Montserrat';
+        font-weight: 300;
+        font-size: 0px;
+        color: rgba(96, 96, 96, 0.6);
+    }
 }
 
-.container{
+.container{  
+    width: 86%;
+    padding-top: 280px;
+    margin-left: 7%;
+    margin-bottom: 80px;
     display: grid;
     grid-row-gap: 30px;
     grid-column-gap: 30px;
+    grid-template-columns: 40fr 40fr 40fr 40fr;
+    grid-template-rows: 40fr 40fr;
 }
 
 .content{
     background-color: rgba(255, 255, 255, 1);
-    padding: 30px 30px 30px 30px;
+    padding: 7%;
+    width: 1fr;
     border-radius: 16px;
     display: flex;
     justify-content: center;
@@ -77,20 +96,21 @@ section{
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
 }
 
 .title{
     font-family: 'Montserrat';
     font-weight: 500;
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 200%;
+    margin-bottom: 3%;
     color: #292929;
 }
 
 .description{
     font-family: 'Montserrat';
     font-weight: 500;
-    font-size: 16px;
+    font-size: 100%;
     margin: 0;
     color: #606060;
 }
@@ -98,11 +118,11 @@ section{
 .price{
     font-family: 'Montserrat';
     font-weight: 400;
-    font-size: 24px;
-    color: #2e2e2e;
+    font-size: 150%;
+    color: #000000;
     background: rgba(249, 199, 191, 0.5);
     border-radius: 8px;
-    padding: 8px;
+    padding: 2%;
 }
 
 #item1{
@@ -148,14 +168,79 @@ section{
 }
 
 .bigImg{
-    height: 270px;
-    width: 270px;
-    margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 3%;
 }
 
 .smallImg{
-    height: 192px;
-    width: 192px;
+    width: 100%;
+}
+
+@media screen and (max-width: 720px) {
+    .container{
+        
+        grid-template-columns: 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr;
+        grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr;
+    }
+
+    .title{
+        font-size: 90%;
+        margin-bottom: 0px;
+    }
+    
+    .description{
+        font-size: 40%;
+    }
+    
+    .price{
+        font-size: 65%;
+    }
+    
+	#item1{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    #item2{
+        grid-column-start: 5;
+        grid-column-end: 8;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    
+    #item3{
+        grid-column-start: 5;
+        grid-column-end: 8;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    
+    #item4{
+        grid-column-start: 4;
+        grid-column-end: 8;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
+    
+    #item5{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    
+    #item6{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .bigImg{
+        margin-bottom: 0px;
+    }
 }
 
 .inLogo{
@@ -204,7 +289,7 @@ section{
 
 .footerBar .logo{
     width: 60px;
-    padding-left: 130px;
+    padding-left: 10vw;
 }
 
 .footerBar p{
@@ -218,6 +303,7 @@ section{
 .footerBar{
     width: 90%;
     height: 155px;
+    margin-left: 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -225,9 +311,25 @@ section{
 
 footer{
     background-color: rgba(242, 242, 242, 1);
-    padding: 0px 70px 0px 70px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+    .footerBar .logo{
+        /*display: none;*/
+        width: 0px;
+    }
+
+    .contact{
+        gap: 50px;
+    }
+
+    .footerBar{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 5%;
+        width: 80%;
+        margin-left: 10%;
+    }
 }
